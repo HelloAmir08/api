@@ -1,8 +1,8 @@
 from django.urls import path, include
 from example import views
-from example.views import ProductList, ProductDetail
+from example.views import CategoryCRUDView, ProductCRUDView
 
 urlpatterns = [
-    path('product-list/', ProductList.as_view(), name='product-list'),
-    path('product-detail/<int:pk>/', ProductDetail.as_view(), name='product-detail'),
+    path('categories/<int:pk>/', CategoryCRUDView.as_view(), name='category-crud'),
+    path('products/<int:pk>/', ProductCRUDView.as_view(), name='product-crud'),
 ]
